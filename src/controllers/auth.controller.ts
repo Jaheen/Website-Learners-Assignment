@@ -14,7 +14,7 @@ export default class AuthController {
     const { emailAddress, password } = req.body;
 
     // if email address not provided or invalid is provided send unauthorized
-    if (typeof emailAddress !== "string" || emailRegex.test(emailAddress))
+    if (typeof emailAddress !== "string" || !emailRegex.test(emailAddress))
       return res.status(400).json({ error: "emailAddress-invalid" });
 
     // if password not provided or empty password is provided send unauthorized
@@ -56,7 +56,7 @@ export default class AuthController {
     if (!lastName) lastName = "";
 
     // if email address is undefined or invalid, send bad request 400
-    if (typeof emailAddress !== "string" || emailRegex.test(emailAddress))
+    if (typeof emailAddress !== "string" || !emailRegex.test(emailAddress))
       return res.status(400).json({ error: "emailAddress-invalid" });
 
     // if password is undefined or empty, send bad request 400

@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "removeComments": true,
-    "outDir": "./build/",
-    "baseUrl": "./src"
+    "module": "commonjs",
+    "baseUrl": "./src",
+    "target": "ES6",
+    "moduleResolution": "nodenext",
+    "outDir": "./build/"
   }
 }
